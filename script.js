@@ -2,10 +2,10 @@ function extraMemoryCost(Cost, memoryCost) {
    const costForMemory = document.getElementById(Cost + '-extra-cost');
    let costForMemoryText = costForMemory.innerText;
 
-   if (memoryCost == true) { console.log('true'); costForMemoryText = parseInt(00); }
-   else if (memoryCost == false) { console.log('false'); costForMemoryText = parseInt(180); }
-   else if (memoryCost == '512-SSD') { console.log('nothing'); costForMemoryText = 100; }
-   else if (memoryCost == 'Aug-21') { console.log('nothing'); costForMemoryText = 20; }
+   if (memoryCost == true) { costForMemoryText = parseInt(00); }
+   else if (memoryCost == false) { costForMemoryText = parseInt(180); }
+   else if (memoryCost == '512-SSD') { costForMemoryText = 100; }
+   else if (memoryCost == 'Aug-21') { costForMemoryText = 20; }
 
    costForMemory.innerText = costForMemoryText;
    calculation();
@@ -76,7 +76,6 @@ document.getElementById('apply-btn').addEventListener('click', function () {
 
       discount.innerText = totalCostNumber - discountPrice;
       inputText.value = '';
-      console.log(discountPrice);
    }
    else {
       inputText.value = '';
