@@ -1,59 +1,48 @@
-
-
 // memory ....
 
-function extraMemoryCost(memoryCost) {
-   const costForMemory = document.getElementById('extra-memory-cost')
-   if (memoryCost == true) { costForMemory.innerText = 00; }
-   else { costForMemory.innerText = 180; }
-}
+function extraMemoryCost(Cost, memoryCost) {
+   const costForMemory = document.getElementById(Cost + '-extra-cost');
+   let costForMemoryText = costForMemory.innerText;
 
+   if (memoryCost == true) { console.log('true'); costForMemoryText = parseInt(00); }
+   else if (memoryCost == false) { console.log('false'); costForMemoryText = parseInt(180); }
+   else if (memoryCost == '512-SSD') { console.log('nothing'); costForMemoryText = 100; }
+   else if (memoryCost == 'Aug-21') { console.log('nothing'); costForMemoryText = 20; }
+
+   costForMemory.innerText = costForMemoryText;
+
+   // best price
+   const bestPrice = document.getElementById('best-price');
+   const bestPriceText = bestPrice.innerText;
+   const bestPriceTextNumber = parseInt(bestPriceText);
+
+   //update total cost for extra memory
+   const totalCost = document.getElementById('total-price');
+   totalCost.innerText = bestPriceTextNumber + costForMemoryText;
+   return costForMemoryText;
+}
+/////////////// MEMORY///////////////
 document.getElementById('8GB-btn').addEventListener('click', function () {
-   extraMemoryCost(true);
+   extraMemoryCost('memory', true);
 })
 document.getElementById('16GB-btn').addEventListener('click', function () {
-   extraMemoryCost(false);
+   extraMemoryCost('memory', false);
 })
-
-
-
-// storage ...
-
-function extraStorageCost(storageCost) {
-   const costForStorage = document.getElementById('extra-storage-cost')
-   if (storageCost == true) { costForStorage.innerText = 00; }
-   else if (storageCost == false) { costForStorage.innerText = 100; }
-   else { costForStorage.innerText = 180; }
-}
-
+///////////////// STORAGE ///////////////
 document.getElementById('256GB-btn').addEventListener('click', function () {
-   extraStorageCost(true);
-
+   extraMemoryCost('storage', true);
 })
-
 document.getElementById('512GB-btn').addEventListener('click', function btn() {
-   extraStorageCost(false);
-
+   extraMemoryCost('storage', '512-SSD');
 })
 document.getElementById('1TB-btn').addEventListener('click', function btn() {
-   extraStorageCost();
+   extraMemoryCost('storage', false);
 })
-
-
-// delivery charge ...
-
-function deliveryChargeCost(deliveryCost) {
-   const costForDelivery = document.getElementById('delivery-charge-cost')
-   if (deliveryCost == true) { costForDelivery.innerText = 00; }
-   else { costForDelivery.innerText = 20; }
-}
-
+//////////////DELIVERY ///////////
 document.getElementById('Aug-25-btn').addEventListener('click', function btn() {
-   deliveryChargeCost(true);
-
+   extraMemoryCost('delivery', true);
 })
 document.getElementById('Aug-21-btn').addEventListener('click', function btn() {
-   deliveryChargeCost(false);
-
+   extraMemoryCost('delivery', 'Aug-21');
 })
 
