@@ -1,5 +1,3 @@
-// memory ....
-
 function extraMemoryCost(Cost, memoryCost) {
    const costForMemory = document.getElementById(Cost + '-extra-cost');
    let costForMemoryText = costForMemory.innerText;
@@ -32,6 +30,9 @@ function calculation() {
    // calculation total prices
    const totalCost = document.getElementById('total-extra-cost');
    totalCost.innerText = bestPriceTextNumber + extraCostForStorage + extraCostForDelivery + extraCostForMemory;
+   // out area total
+   const totalCostAnother = document.getElementById('another-total-extra-cost');
+   totalCostAnother.innerText = bestPriceTextNumber + extraCostForStorage + extraCostForDelivery + extraCostForMemory;
 }
 /////////////// MEMORY///////////////
 document.getElementById('8GB-btn').addEventListener('click', function () {
