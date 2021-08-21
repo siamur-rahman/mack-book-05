@@ -5,22 +5,22 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Assignment-5</title>
+   <title>Blue 24-inch iMac</title>
+
+   <!-- css styles -->
    <link rel="stylesheet" href="style.css">
 
    <!-- Tailwind styles..  -->
    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
 </head>
 
 <body>
    <header>
 
    </header>
-
    <main>
-
-      <section class="grid grid-cols-2 font-medium ">
+      <!-- main section  -->
+      <section class="grid grid-cols-2 font-medium text-medium	 ">
          <div class="ml-48  grid grid-cols-1 flex justify-end m-4">
 
             <div class="">
@@ -40,16 +40,17 @@
 
             <div class="chosing-option">
                <h5>Memory</h5>
-               <button id="8GB-btn" class="border border-gray-300 p-3  rounded">8GB unified memory</button>
-               <button id="16GB-btn" class="border border-gray-300 p-3  rounded">16GB unified memory</button>
+               <button id="8GB-btn" class="btn-hover border border-gray-300 p-3  rounded">8GB unified memory</button>
+               <button id="16GB-btn" class="btn-hover border border-gray-300 p-3  rounded">16GB unified memory</button>
                <h5>Storage</h5>
-               <button id="256GB-btn" class="border border-gray-300 p-3  rounded">256GB SSD storage</button>
-               <button id="512GB-btn" class="border border-gray-300 p-3  rounded">512GB SSD storage</button>
-               <button id="1TB-btn" class="border border-gray-300 p-3  rounded">1TB SSD storage</button>
+               <button id="256GB-btn" class="btn-hover border border-gray-300 p-3  rounded">256GB SSD storage</button>
+               <button id="512GB-btn" class="btn-hover border border-gray-300 p-3  rounded">512GB SSD storage</button>
+               <button id="1TB-btn" class="btn-hover border border-gray-300 p-3  rounded">1TB SSD storage</button>
                <h5>Choose your delivery option</h5>
-               <button id="Aug-25-btn" class="border border-gray-300 p-3  rounded">Friday,Aug 25 FREE Primary
+               <button id="Aug-25-btn" class="btn-hover border border-gray-300 p-3  rounded">Friday,Aug 25 FREE Primary
                   Delivery</button>
-               <button id="Aug-21-btn" class="border border-gray-300 p-3  rounded">Friday, Aug 21 Delivery charge
+               <button id="Aug-21-btn" class="btn-hover border border-gray-300 p-3  rounded">Friday, Aug 21 Delivery
+                  charge
                   $20</button>
             </div>
 
@@ -57,7 +58,6 @@
             <div class="calculation-total grid grid-cols-2 mt-8">
 
                <div>
-
                   <div class="calculate-best-price ">
                      <div class="grid grid-cols-2 my-3">
                         <h3>Best Price</h3>
@@ -92,7 +92,6 @@
                      <hr class="w-2/3 border-b-2 border-gray-400">
                   </div>
 
-
                   <div class="calculate-best-price ">
                      <div class="grid grid-cols-2 my-3">
                         <h3>Total Price</h3>
@@ -104,27 +103,22 @@
                   <div>
                      <p>Add pomo code</p>
                      <div class="calculate-best-price mt-4">
-                        <input class="w-2/4 p-1 border rounded-lg" type="text">
-                        <button class="bg-red-400 p-1 m-2 rounded">Apply</button>
+                        <input id="input-text" class="w-2/4 p-1 border rounded-lg" type="text">
+                        <button id="apply-btn" class="bg-red-400 p-1 m-2 rounded">Apply</button>
                      </div>
                   </div>
                </div>
             </div>
-
          </div>
-
       </section>
-
+      <!-- discount section  -->
       <section class=" flex justify-center		font-medium ">
          <div class=" w-4/5 ">
             <hr class=" border-b-2 border-gray-200">
             <div class="flex justify-center		font-medium ">
-               <h2 class="text-4xl ">Total: $<span id="another-total-extra-cost">1299</span></h2>
-
+               <h2 class="text-4xl ">Total: $<span id="discount-text">1299</span></h2>
             </div>
-
          </div>
-
       </section>
    </main>
 

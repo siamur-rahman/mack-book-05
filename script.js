@@ -30,9 +30,11 @@ function calculation() {
    // calculation total prices
    const totalCost = document.getElementById('total-extra-cost');
    totalCost.innerText = bestPriceTextNumber + extraCostForStorage + extraCostForDelivery + extraCostForMemory;
+
    // out area total
-   const totalCostAnother = document.getElementById('another-total-extra-cost');
+   const totalCostAnother = document.getElementById('discount-text');
    totalCostAnother.innerText = bestPriceTextNumber + extraCostForStorage + extraCostForDelivery + extraCostForMemory;
+   return totalCost.innerText;
 }
 /////////////// MEMORY///////////////
 document.getElementById('8GB-btn').addEventListener('click', function () {
@@ -45,16 +47,39 @@ document.getElementById('16GB-btn').addEventListener('click', function () {
 document.getElementById('256GB-btn').addEventListener('click', function () {
    extraMemoryCost('storage', true);
 })
-document.getElementById('512GB-btn').addEventListener('click', function btn() {
+document.getElementById('512GB-btn').addEventListener('click', function () {
    extraMemoryCost('storage', '512-SSD');
 })
-document.getElementById('1TB-btn').addEventListener('click', function btn() {
+document.getElementById('1TB-btn').addEventListener('click', function () {
    extraMemoryCost('storage', false);
 })
 //////////////DELIVERY ///////////
-document.getElementById('Aug-25-btn').addEventListener('click', function btn() {
+document.getElementById('Aug-25-btn').addEventListener('click', function () {
    extraMemoryCost('delivery', true);
 })
-document.getElementById('Aug-21-btn').addEventListener('click', function btn() {
+document.getElementById('Aug-21-btn').addEventListener('click', function () {
    extraMemoryCost('delivery', 'Aug-21');
 })
+///////////////// discount part/////////////// 
+document.getElementById('apply-btn').addEventListener('click', function () {
+   const inputText = document.getElementById('input-text');
+   const inputInnerText = inputText.value;
+
+   const discount = document.getElementById('discount-text');
+
+   if (inputInnerText == 'stevekaku') {
+      const totalCost = calculation();
+      const totalCostNumber = parseInt(totalCost);
+
+      const discounted = totalCost / 100;
+      const discountPrice = discounted * 20;
+
+      discount.innerText = totalCostNumber - discountPrice;
+      inputText.value = '';
+      console.log(discountPrice);
+   }
+   else {
+      inputText.value = '';
+   }
+})
+
